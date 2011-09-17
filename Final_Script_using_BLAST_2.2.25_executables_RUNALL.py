@@ -71,7 +71,7 @@ os.chdir(my_directory)
 db_file = r"All_Parts_NO_BLANKS_SIMPLE_HEADERS.fna.txt" # Request this file from user
 os_system_input_1 = r'makeblastdb -in ' + db_file + r' -dbtype nucl -input_type fasta'
 print('Creating Database ... ... ...')
-### os.system(os_system_input_1)
+os.system(os_system_input_1)
 #### os.system('makeblastdb -in All_Parts_NO_BLANKS_SIMPLE_HEADERS.fna.txt -dbtype nucl -input_type fasta')
 print('... ... ... Database Creation Completed')
 print
@@ -82,7 +82,7 @@ query_sequence_file = r"Test_Sequence.fna.txt" # Request this file from user
 os_system_input_2 = r'blastn -query ' + query_sequence_file + r' -task blastn -db ' + db_file + r' -max_target_seqs ' + max_target_seqs_input + r' -out blastn_report.xml -evalue 10 -outfmt 5'
 # Note: User does not have option to name the output xml file. Output file is: r"blastn_report.xml"
 print('BLASTing (-version 2.2.25+) Against Local Database ... ... ...')
-### os.system(os_system_input_2)
+os.system(os_system_input_2)
 #### os.system('blastn -query Test_Sequence.fna.txt -task blastn -db All_Parts_NO_BLANKS_SIMPLE_HEADERS.fna.txt -max_target_seqs 10 -out blastn_report.xml -evalue 10 -outfmt 5') #-html')
 #### os.system('blastn -query Test_Sequence.fna.txt -task blastn -db All_Parts_NO_BLANKS_SIMPLE_HEADERS.fna.txt -out blastn_report -evalue 10 -outfmt 0') #-html')
 print('... ... ... BLASTn Completed')
